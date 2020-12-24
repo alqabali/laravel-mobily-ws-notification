@@ -51,7 +51,7 @@ class MobilyWsChannel
         if ($response['code'] == 1) {
             return $response['message'];
         }
-        $this->events->fire(
+        $this->events->dispatch(
             new NotificationFailed($notifiable, $notification, 'mobily-ws', $response)
         );
 
